@@ -11,7 +11,7 @@ const UnitSelector = ({ scale, onScaleChange}: Props): JSX.Element => {
             value={scale}
             onChange={(e) => onScaleChange(e.target.value as 'c' | 'f')}
         >
-            <option value="c">Celsius</option>
+        <option value="c">Celsius</option>
         <option value="f">Fahrenheit</option>
     </select>
     );
