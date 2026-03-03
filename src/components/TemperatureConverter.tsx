@@ -2,6 +2,7 @@ import { useState } from 'react';
 import TemperatureInput from './TemperatureInput';
 import UnitSelector from './UnitSelector';
 import { convert } from '../utils/conversions';
+import Thermometer from './Thermometer';
 
 const TemperatureConverter = () => {
   const [temperature, setTemperature] = useState<string>('');
@@ -42,6 +43,10 @@ const TemperatureConverter = () => {
           }}
         />
       </div>
+      <Thermometer
+        temperature={parseFloat(temperature) || 0}
+        scale={scale}
+      />
     </div>
   );
 };
