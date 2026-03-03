@@ -4,18 +4,31 @@ interface Props {
   onTemperatureChange: (value: string) => void;
 }
 
-const TemperatureInput = ({ scale, temperature, onTemperatureChange }: Props) => {
-  let label;
+const TemperatureInput = ({
+  scale,
+  temperature,
+  onTemperatureChange,
+}: Props) => {
+  const label = scale === 'c' ? 'Celsius' : 'Fahrenheit';
 
-  if (scale === 'c') {
-    label = 'Celsius';
-  } else {
-    label = 'Fahrenheit';
+  const temp = parseFloat(temperature);
+  let icon = '🌡️';
+
+  if (!isNaN(temp)) {
+    if (scale === 'c') {
+      if (temp <= 0) icon = '❄️';        
+      else if (temp >= 100) icon = '🔥'; 
+    } else {
+      if (temp <= 32) icon = '❄️';       
+      else if (temp >= 212) icon = '🔥';
+    }
   }
 
   return (
-    <div>
-      <label>{label}</label>
+    <div className="input-group">
+      <label>
+        {icon} {label}
+      </label>
       <input
         type="number"
         value={temperature}
