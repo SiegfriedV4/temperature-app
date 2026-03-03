@@ -15,30 +15,33 @@ const TemperatureConverter = () => {
     ? temperature
     : temperature === '' ? '' : String(convert(Number(temperature), scale));
 
-  const handleCelsiusChange = (value: string) => {
-    setTemperature(value);
-    setScale('c');
-  };
-
-  const handleFahrenheitChange = (value: string) => {
-    setTemperature(value);
-    setScale('f');
-  };
-
   return (
-    <div>
-      <h2>Temperature Converter</h2>
-      <UnitSelector scale={scale} onScaleChange={setScale} />
-      <TemperatureInput
-        scale="c"
-        temperature={celsius}
-        onTemperatureChange={handleCelsiusChange}
-      />
-      <TemperatureInput
-        scale="f"
-        temperature={fahrenheit}
-        onTemperatureChange={handleFahrenheitChange}
-      />
+    <div className="container">
+      <div className="card">
+        <UnitSelector scale={scale} onScaleChange={setScale} />
+      </div>
+
+      <div className="card">
+        <TemperatureInput
+          scale="c"
+          temperature={celsius}
+          onTemperatureChange={(value) => {
+            setTemperature(value);
+            setScale('c');
+          }}
+        />
+      </div>
+
+      <div className="card">
+        <TemperatureInput
+          scale="f"
+          temperature={fahrenheit}
+          onTemperatureChange={(value) => {
+            setTemperature(value);
+            setScale('f');
+          }}
+        />
+      </div>
     </div>
   );
 };
