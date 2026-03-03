@@ -59,7 +59,34 @@ TEMPERATURE-APP/
 
 - **components/** → UI components — converter, input field, unit dropdown
 - **utils/** → Pure conversion logic — `toFahrenheit`, `toCelsius`, `convert`
+- **assets/** → Images and screenshots
 
+---
+
+## 📸 Screenshots
+
+### 📱 Mobile View
+<img src="src/assets/screenshots/mobileDefault.png" width="250" />
+
+### 📱 Mobile View with Temperature Freezing
+<img src="src/assets/screenshots/mobileFreeze.png" width="250" />
+
+### 📱 Mobile View with Temperature Hot
+<img src="src/assets/screenshots/mobileHot.png" width="250" />
+
+### 💻 Desktop View
+<img src="src/assets/screenshots/desktopDefault.png" width="500" />
+
+### 💻 Desktop View with Temperature Freezing
+<img src="src/assets/screenshots/desktopFreeze.png" width="500" />
+
+### 💻 Desktop View with Temperature Hot
+<img src="src/assets/screenshots/desktopHot.png" width="500" />
+
+> Store screenshots in:
+> `src/assets/screenshots/`
+
+---
 
 ## ⚙️ Installation & Setup
 
