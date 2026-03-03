@@ -74,6 +74,9 @@ TEMPERATURE-APP/
 ### 📱 Mobile View with Temperature Hot
 <img src="src/assets/screenshots/mobileHot.png" width="250" />
 
+### 📱 Mobile View with Themometer UI
+<img src="src/assets/screenshots/mobileThermometer.png" width="250" />
+
 ### 💻 Desktop View
 <img src="src/assets/screenshots/desktopDefault.png" width="500" />
 
@@ -82,6 +85,9 @@ TEMPERATURE-APP/
 
 ### 💻 Desktop View with Temperature Hot
 <img src="src/assets/screenshots/desktopHot.png" width="500" />
+
+### 💻 Desktop View with Thermometer UI
+<img src="src/assets/screenshots/desktopThermometer.png" width="500" />
 
 > Store screenshots in:
 > `src/assets/screenshots/`
