@@ -1,73 +1,136 @@
-# React + TypeScript + Vite
+# 🌡️ Temperature Converter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React + TypeScript application that converts temperatures between Celsius and Fahrenheit.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Description
 
-## React Compiler
+This application allows users to type a temperature in either Celsius or Fahrenheit and instantly see the converted value in the other field both staying the same.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal of this project is to practice:
+- Lifting state up to a common parent component
+- Controlled components driven by React state
+- TypeScript interfaces and union types
+- Separating business logic from UI logic
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🖥 Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React
+- TypeScript
+- Vite
+- HTML5
+- CSS3
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Project Structure
+
+```
+TEMPERATURE-APP/
+│
+├── public/
+│   └── vite.svg
+│
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   │
+│   ├── components/
+│   │   ├── TemperatureConverter.tsx
+│   │   ├── TemperatureInput.tsx
+│   │   └── UnitSelector.tsx
+│   │
+│   ├── utils/
+│   │   └── conversions.ts
+│   │
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+│
+├── package.json
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Folder Responsibilities
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **components/** → UI components — converter, input field, unit dropdown
+- **utils/** → Pure conversion logic — `toFahrenheit`, `toCelsius`, `convert`
+- **assets/** → Images and screenshots
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 📸 Screenshots
+
+### 📱 Mobile View
+<img src="src/assets/screenshots/mobileDefault.png" width="250" />
+
+### 📱 Mobile View with Temperature Freezing
+<img src="src/assets/screenshots/mobileFreeze.png" width="250" />
+
+### 📱 Mobile View with Temperature Hot
+<img src="src/assets/screenshots/mobileHot.png" width="250" />
+
+### 📱 Mobile View with Themometer UI
+<img src="src/assets/screenshots/mobileThermometer.png" width="250" />
+
+### 💻 Desktop View
+<img src="src/assets/screenshots/desktopDefault.png" width="500" />
+
+### 💻 Desktop View with Temperature Freezing
+<img src="src/assets/screenshots/desktopFreeze.png" width="500" />
+
+### 💻 Desktop View with Temperature Hot
+<img src="src/assets/screenshots/desktopHot.png" width="500" />
+
+### 💻 Desktop View with Thermometer UI
+<img src="src/assets/screenshots/desktopThermometer.png" width="500" />
+
+> Store screenshots in:
+> `src/assets/screenshots/`
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SiegfriedV4/temperature-app.git
+   ```
+
+2. Navigate into the project:
+   ```bash
+   cd temperature-app
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🎯 What I Learned
+
+- How to lift state up to a common parent component
+- The difference between state and derived values
+- How controlled components work in React
+- TypeScript union types (`'c' | 'f'`) for precise type safety
+- Separating pure utility functions from UI components
+- Git branch workflow — feature branches, PRs, merging into dev
+
+---
+
+## 🚀 Future Improvements
+
+- Add Kelvin as a third conversion unit
+- Add location-based temperature lookup via a weather API
+- Style the UI with a dedicated styles folder architecture
