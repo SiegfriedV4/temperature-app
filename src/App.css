@@ -103,3 +103,38 @@ select:focus {
 .theme-toggle:hover {
   opacity: 0.85;
 }
+
+/* Changes for the themometer component */
+/* Thermometer Wrapper */
+.thermometer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Thermometer Body */
+.thermometer {
+  width: 50px;
+  height: 200px;
+  border-radius: 25px;
+  background: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #cbd5e1;
+}
+
+/* Fill */
+.thermometer-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, #22c55e, #f97316, #ef4444);
+  transition: height 0.3s ease;
+}
+
+/* Label */
+.thermometer-label {
+  font-weight: bold;
+  color: var(--text);
+}
